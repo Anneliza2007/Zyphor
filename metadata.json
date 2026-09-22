@@ -1,0 +1,6 @@
+{
+  "name": "Zyphor LifeBand",
+  "description": "High-converting landing page and copy architecture for Zyphor LifeBand, the AI-powered smart health and safety wearable.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
