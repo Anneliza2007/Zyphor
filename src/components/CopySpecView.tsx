@@ -112,7 +112,7 @@ export const CopySpecView: React.FC = () => {
 - **Headline:** Don’t Wait for a Close Call to Force Your Hand.
 - **Subheadline:** Give your loved ones the freedom they deserve and yourself the calm nights you’ve been missing. Try Zyphor LifeBand completely risk-free for 60 days.
 - **Primary CTA Button:** Secure Your Loved One’s Safety Now
-- **Advisory Phone Alternative:** Call our Senior Care Advisors: 1-800-555-ZYPHOR
+- **Advisory Phone Alternative:** Call our Senior Care Advisors: +91 98498 95925 (tel: 9849895925)
 - **Conversion Guarantees:**
   - 60-Day In-Home Trial (100% money back)
   - Free 2-Day Priority Delivery

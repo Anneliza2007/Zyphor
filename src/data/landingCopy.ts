@@ -142,7 +142,7 @@ export const SECTION_SPECS: SectionSpec[] = [
     ],
     ctaText: 'Secure Your Loved One’s Safety Now',
     uxWireframeNotes: [
-      'High-contrast focal banner with warm emerald or indigo container, clear primary action button, phone order alternative ("Or speak with an advisor: 1-800-555-ZYPHOR").',
+      'High-contrast focal banner with warm emerald or indigo container, clear primary action button, phone order alternative ("Or speak with an advisor: +91 98498 95925").',
       'Trust icon array: 60-Day Trial, Free Returns, 1-Year Warranty, 256-bit Encrypted Health Data.',
       'Minimalist footer with FAQ links, clinical whitepaper download, and caregiver guide resources.'
     ],

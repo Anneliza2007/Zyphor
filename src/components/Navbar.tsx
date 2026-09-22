@@ -79,11 +79,11 @@ export const Navbar: React.FC<NavbarProps> = ({
           )}
 
           <a
-            href="tel:18005559974"
+            href="tel:9849895925"
             className="hidden sm:flex items-center space-x-1 text-xs font-medium text-stone-600 hover:text-stone-900"
           >
             <PhoneCall className="w-3.5 h-3.5 text-stone-500" />
-            <span>1-800-555-ZYPHOR</span>
+            <span>+91 98498 95925</span>
           </a>
 
           <button

@@ -94,7 +94,7 @@ export const FinalCtaSection: React.FC<FinalCtaProps> = ({ wireframeMode, onOpen
 
             <div className="text-xs text-stone-400 flex items-center justify-center space-x-2">
               <PhoneCall className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Questions? Call our Senior Care Advisors: 1-800-555-ZYPHOR</span>
+              <span>Questions? Call our Senior Care Advisors: <a href="tel:9849895925" className="text-emerald-400 hover:text-emerald-300 font-semibold underline underline-offset-2">+91 98498 95925</a></span>
             </div>
           </div>
 
