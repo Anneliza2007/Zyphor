@@ -13,7 +13,6 @@ import { VideoModal } from './components/VideoModal';
 
 export default function App() {
   const [activeView, setActiveView] = useState<'landing' | 'copySpec'>('landing');
-  const [wireframeMode, setWireframeMode] = useState<boolean>(false);
   const [orderModalOpen, setOrderModalOpen] = useState<boolean>(false);
   const [videoModalOpen, setVideoModalOpen] = useState<boolean>(false);
 
@@ -23,8 +22,6 @@ export default function App() {
       <Navbar
         activeView={activeView}
         setActiveView={setActiveView}
-        wireframeMode={wireframeMode}
-        setWireframeMode={setWireframeMode}
         onOpenOrderModal={() => setOrderModalOpen(true)}
       />
 
@@ -34,35 +31,31 @@ export default function App() {
           <div className="animate-in fade-in duration-200">
             {/* 1. Hero Section */}
             <HeroSection
-              wireframeMode={wireframeMode}
               onOpenOrderModal={() => setOrderModalOpen(true)}
               onOpenVideoModal={() => setVideoModalOpen(true)}
             />
 
             {/* 2. The Problem We're Solving */}
-            <ProblemSection wireframeMode={wireframeMode} />
+            <ProblemSection />
 
             {/* 3. Introducing Zyphor LifeBand */}
             <ProductIntroSection
-              wireframeMode={wireframeMode}
               onOpenOrderModal={() => setOrderModalOpen(true)}
             />
 
             {/* 4. Key Benefits (Seniors & Caregivers) */}
-            <BenefitsSection wireframeMode={wireframeMode} />
+            <BenefitsSection />
 
             {/* 5. Why Choose Us / Uniqueness Comparison */}
             <ComparisonSection
-              wireframeMode={wireframeMode}
               onOpenOrderModal={() => setOrderModalOpen(true)}
             />
 
             {/* 6. Social Proof / Clinical Trust */}
-            <SocialProofSection wireframeMode={wireframeMode} />
+            <SocialProofSection />
 
             {/* 7. Final Call-to-Action Footer */}
             <FinalCtaSection
-              wireframeMode={wireframeMode}
               onOpenOrderModal={() => setOrderModalOpen(true)}
             />
           </div>

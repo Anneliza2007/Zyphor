@@ -3,38 +3,16 @@ import { Check, X, Shield, Sparkles, Info, ArrowRight } from 'lucide-react';
 import { COMPARISON_DATA, SECTION_SPECS } from '../data/landingCopy';
 
 interface ComparisonSectionProps {
-  wireframeMode: boolean;
   onOpenOrderModal: () => void;
 }
 
 export const ComparisonSection: React.FC<ComparisonSectionProps> = ({ 
-  wireframeMode, 
   onOpenOrderModal 
 }) => {
   const spec = SECTION_SPECS[4];
 
   return (
     <section id="comparison-section" className="py-20 bg-stone-50 text-stone-900 border-b border-stone-200">
-      {/* Wireframe overlay notes */}
-      {wireframeMode && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-          <div className="p-4 rounded-xl bg-amber-50 border border-amber-300 text-stone-800 text-xs space-y-2">
-            <div className="flex items-center space-x-1.5 font-bold text-amber-900 uppercase tracking-wider text-[11px]">
-              <Info className="w-4 h-4 text-amber-700" />
-              <span>Section 5: Comparison Matrix & Objection Handling Blueprint</span>
-            </div>
-            <p className="font-mono text-stone-700">
-              <strong>CRO Strategy:</strong> {spec.croRationale}
-            </p>
-            <ul className="list-disc pl-5 space-y-1 text-stone-700 font-mono">
-              {spec.uxWireframeNotes.map((note, idx) => (
-                <li key={idx}>{note}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      )}
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

@@ -2,11 +2,7 @@ import React from 'react';
 import { AlertTriangle, HeartCrack, Compass, Ban, Info, Quote } from 'lucide-react';
 import { SECTION_SPECS } from '../data/landingCopy';
 
-interface ProblemSectionProps {
-  wireframeMode: boolean;
-}
-
-export const ProblemSection: React.FC<ProblemSectionProps> = ({ wireframeMode }) => {
+export const ProblemSection: React.FC = () => {
   const spec = SECTION_SPECS[1];
 
   const painPoints = [
@@ -42,26 +38,6 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({ wireframeMode })
 
   return (
     <section id="problem-section" className="py-20 bg-stone-100 text-stone-900 border-b border-stone-200">
-      {/* Wireframe overlay notes */}
-      {wireframeMode && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-          <div className="p-4 rounded-xl bg-amber-50 border border-amber-300 text-stone-800 text-xs space-y-2">
-            <div className="flex items-center space-x-1.5 font-bold text-amber-900 uppercase tracking-wider text-[11px]">
-              <Info className="w-4 h-4 text-amber-700" />
-              <span>Section 2: Problem Wireframe Blueprint & Psychology</span>
-            </div>
-            <p className="font-mono text-stone-700">
-              <strong>CRO Strategy:</strong> {spec.croRationale}
-            </p>
-            <ul className="list-disc pl-5 space-y-1 text-stone-700 font-mono">
-              {spec.uxWireframeNotes.map((note, idx) => (
-                <li key={idx}>{note}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      )}
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

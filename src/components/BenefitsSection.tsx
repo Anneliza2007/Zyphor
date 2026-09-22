@@ -13,11 +13,7 @@ import {
 } from 'lucide-react';
 import { SECTION_SPECS } from '../data/landingCopy';
 
-interface BenefitsSectionProps {
-  wireframeMode: boolean;
-}
-
-export const BenefitsSection: React.FC<BenefitsSectionProps> = ({ wireframeMode }) => {
+export const BenefitsSection: React.FC = () => {
   const spec = SECTION_SPECS[3];
   const [audienceTab, setAudienceTab] = useState<'seniors' | 'caregivers'>('seniors');
 
@@ -85,26 +81,6 @@ export const BenefitsSection: React.FC<BenefitsSectionProps> = ({ wireframeMode 
 
   return (
     <section id="benefits-section" className="py-20 bg-stone-100 text-stone-900 border-b border-stone-200">
-      {/* Wireframe overlay notes */}
-      {wireframeMode && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-          <div className="p-4 rounded-xl bg-amber-50 border border-amber-300 text-stone-800 text-xs space-y-2">
-            <div className="flex items-center space-x-1.5 font-bold text-amber-900 uppercase tracking-wider text-[11px]">
-              <Info className="w-4 h-4 text-amber-700" />
-              <span>Section 4: Dual-Audience Benefits Wireframe Specs</span>
-            </div>
-            <p className="font-mono text-stone-700">
-              <strong>CRO Strategy:</strong> {spec.croRationale}
-            </p>
-            <ul className="list-disc pl-5 space-y-1 text-stone-700 font-mono">
-              {spec.uxWireframeNotes.map((note, idx) => (
-                <li key={idx}>{note}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      )}
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

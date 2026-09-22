@@ -4,16 +4,12 @@ import { ShieldCheck, PhoneCall, FileText, Layout, ArrowRight } from 'lucide-rea
 interface NavbarProps {
   activeView: 'landing' | 'copySpec';
   setActiveView: (view: 'landing' | 'copySpec') => void;
-  wireframeMode: boolean;
-  setWireframeMode: (val: boolean) => void;
   onOpenOrderModal: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   activeView,
   setActiveView,
-  wireframeMode,
-  setWireframeMode,
   onOpenOrderModal
 }) => {
   return (
@@ -32,51 +28,34 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
         </div>
 
-        {/* Center Mode Switcher for Copywriter & Wireframe Review */}
-        <div className="hidden md:flex items-center bg-stone-200/70 p-1 rounded-xl border border-stone-300/60">
-          <button
-            id="nav-view-landing"
-            onClick={() => setActiveView('landing')}
-            className={`flex items-center space-x-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-              activeView === 'landing'
-                ? 'bg-white text-stone-900 shadow-xs'
-                : 'text-stone-600 hover:text-stone-900'
-            }`}
-          >
-            <Layout className="w-3.5 h-3.5" />
-            <span>Live Landing Page</span>
-          </button>
-          <button
-            id="nav-view-spec"
-            onClick={() => setActiveView('copySpec')}
-            className={`flex items-center space-x-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-              activeView === 'copySpec'
-                ? 'bg-white text-stone-900 shadow-xs'
-                : 'text-stone-600 hover:text-stone-900'
-            }`}
-          >
-            <FileText className="w-3.5 h-3.5" />
-            <span>Copywriter Specs & Wireframes</span>
-          </button>
-        </div>
+        {/* Navigation Section Links */}
+        <nav className="hidden lg:flex items-center space-x-6 text-xs font-semibold text-stone-600">
+          <a href="#features-section" className="hover:text-stone-900 transition-colors">Features</a>
+          <a href="#benefits-section" className="hover:text-stone-900 transition-colors">Benefits</a>
+          <a href="#comparison-section" className="hover:text-stone-900 transition-colors">Why Zyphor</a>
+          <a href="#social-proof-section" className="hover:text-stone-900 transition-colors">Doctor & Caregiver Reviews</a>
+          <a href="#final-cta-section" className="hover:text-stone-900 transition-colors">FAQ & Guarantee</a>
+        </nav>
 
         {/* Right CTA Actions */}
         <div className="flex items-center space-x-3">
-          {activeView === 'landing' && (
-            <button
-              id="nav-wireframe-toggle"
-              onClick={() => setWireframeMode(!wireframeMode)}
-              className={`hidden lg:flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium border transition-colors ${
-                wireframeMode
-                  ? 'bg-amber-100 border-amber-300 text-amber-900 font-semibold'
-                  : 'bg-stone-100 border-stone-200 text-stone-600 hover:bg-stone-200'
-              }`}
-              title="Show UI/UX Wireframe notes inline on the page"
-            >
-              <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
-              <span>{wireframeMode ? 'Wireframe Notes: ON' : 'Show UX Notes'}</span>
-            </button>
-          )}
+          <button
+            id="nav-view-toggle"
+            onClick={() => setActiveView(activeView === 'landing' ? 'copySpec' : 'landing')}
+            className="hidden sm:flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-stone-200 bg-white text-stone-700 hover:bg-stone-50 transition-colors"
+          >
+            {activeView === 'landing' ? (
+              <>
+                <FileText className="w-3.5 h-3.5 text-stone-500" />
+                <span>View Full Copy Spec</span>
+              </>
+            ) : (
+              <>
+                <Layout className="w-3.5 h-3.5 text-stone-500" />
+                <span>Back to Live Page</span>
+              </>
+            )}
+          </button>
 
           <a
             href="tel:9849895925"
@@ -98,24 +77,17 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       {/* Mobile subnav */}
-      <div className="flex md:hidden items-center justify-around border-t border-stone-200 bg-stone-100 px-4 py-2 text-xs">
+      <div className="flex md:hidden items-center justify-between border-t border-stone-200 bg-stone-100 px-4 py-2 text-xs">
+        <div className="flex space-x-2">
+          <a href="#features-section" className="text-stone-600 font-medium py-1 px-2">Features</a>
+          <a href="#benefits-section" className="text-stone-600 font-medium py-1 px-2">Benefits</a>
+          <a href="#comparison-section" className="text-stone-600 font-medium py-1 px-2">Compare</a>
+        </div>
         <button
-          onClick={() => setActiveView('landing')}
-          className={`font-medium py-1 px-3 rounded-md ${activeView === 'landing' ? 'bg-white shadow-xs text-stone-900' : 'text-stone-600'}`}
+          onClick={() => setActiveView(activeView === 'landing' ? 'copySpec' : 'landing')}
+          className="font-semibold py-1 px-2.5 rounded-md bg-white text-stone-900 shadow-2xs border border-stone-200"
         >
-          Live Page
-        </button>
-        <button
-          onClick={() => setActiveView('copySpec')}
-          className={`font-medium py-1 px-3 rounded-md ${activeView === 'copySpec' ? 'bg-white shadow-xs text-stone-900' : 'text-stone-600'}`}
-        >
-          Full Copy & Notes
-        </button>
-        <button
-          onClick={() => setWireframeMode(!wireframeMode)}
-          className={`font-medium py-1 px-2 text-xs rounded-md ${wireframeMode ? 'bg-amber-200 text-amber-900' : 'text-stone-600'}`}
-        >
-          {wireframeMode ? 'UX Notes On' : 'UX Notes Off'}
+          {activeView === 'landing' ? 'Copy Spec' : 'Live Page'}
         </button>
       </div>
     </header>
